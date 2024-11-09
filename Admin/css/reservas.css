@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.booking-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h2 span {
+    color: #fd6d15;
+}
+
+.schedule-section {
+    background: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.date-picker {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.date-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+    flex: 1 0 100%;
+    max-width: 200px;
+}
+
+.date-btn.active {
+    background-color: #fd6d15;
+    color: #fff;
+}
+
+.tab-content {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hora-boton {
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    margin: 5px;
+    transition: background-color 0.3s;
+    width: calc(12.5% - 10px);
+    font-size: 14px;
+    display: flex;
+}
+
+.hora-boton.disponible {
+    background-color: #fff;
+    color: #000;
+}
+
+.hora-boton.no-disponible {
+    background-color: #FF6F00;
+}
+
+.hora-boton.disponible:hover {
+    background-color: #fd6d15;
+    color: #fff;
+}
+
+.hora-boton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .hora-boton {
+        width: calc(33.33% - 10px);
+    }}
+
+   
+   
+
+  
+
+  

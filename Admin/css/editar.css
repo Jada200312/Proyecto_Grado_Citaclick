@@ -1,0 +1,394 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.haircut_section {
+    padding: 20px;
+    background-color: #000;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filters img{
+  width: 80px;
+  height: auto;
+  padding: 2px 5px;
+}
+
+.filter_button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    border-color: #fff;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    font-size: 20px;
+    color: #000;
+}
+
+.filter_button.active, .filter_button:hover {
+    background-color: #fd6d15;
+    color: #fff;
+    border-color: #fd6d15;
+}
+
+.haircut_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.haircut_card {
+    width: 22%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.haircut_card img {
+    width: 100%;
+    height: 320px;
+}
+
+.haircut_info {
+    background-color: rgb(220, 220, 220);
+    padding: 15px;
+    text-align: center;
+}
+
+.haircut_card:hover {
+    transform: translateY(-5px);
+}
+
+.haircut_info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.haircut_info p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Agendar style */
+
+.booking-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.salons-section{
+    display: flex;
+}
+.salon-card{
+    width: 33%;
+    margin: 0 20px;
+}
+.salon-card, .schedule-section, .confirmation-section {
+    background: rgba(34, 34, 34, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.salon-card h3{
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 25px;
+}
+.salon-card p {
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.btn-view-hours, .date-btn, .time-slot, .btn-complete {
+    background-color: #fd6d15;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-view-hours:hover, .date-btn:hover, .time-slot:hover, .btn-complete:hover {
+    background-color: #FF7000;
+}
+
+.schedule-section {
+    text-align: center;
+}
+
+.time-slots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-slot {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.time-slot:hover {
+    background-color: #FF8C00;
+    color: #fff;
+}
+
+input[type="text"], select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:disabled {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.btn-complete {
+    width: 100%;
+}
+
+#openModalBtn {
+    background-color: #fd6d15;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1em;
+    width: 80px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#openModalBtn:hover {
+    background-color: #e55c10;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Opacidad mejorada */
+    padding: 20px; /* Mayor espacio para margen */
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: #000;
+    margin: 9% auto; /* Ajustado para que esté más arriba en la pantalla */
+    padding: 20px;
+    border: 1px solid #fd6d15;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fd6d15;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#fileInputBtn {
+    background-color: #000;
+    border: 1px solid #fd6d15;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#fileName {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #fff;
+    flex-grow: 1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.submit-btn {
+    background-color: #fd6d15;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.submit-btn:hover {
+    background-color: #e55c10;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 85%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .submit-btn {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.9em;
+    }
+
+    #fileInputBtn {
+        padding: 8px;
+    }
+    .haircut_card {
+        width: 100%; /* Hacer las tarjetas de ancho completo */
+    }
+
+    .salon-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .submit-btn {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.85em;
+    }
+
+    #fileInputBtn {
+        font-size: 0.8em;
+        padding: 7px;
+    }
+
+    .haircut_card img {
+        height: 200px;
+    }
+}
+
+.buttondelete{
+background-color: #fd6d15;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+margin: 10px;
+font-size: 1em;
+transition: background-color 0.3s ease-in-out;}
+
+.filterbutton_one{
+    background-color: #fd6d15;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 80px;
+    transition: background-color 0.3s ease-in-out;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+
+

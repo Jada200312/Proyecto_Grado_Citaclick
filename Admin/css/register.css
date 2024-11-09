@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.contenedor-principal { 
+  max-width: 400px; /* Cambiar el ancho máximo */
+  width: 90%; /* Ancho responsivo */
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px 20px 10px 20px; /* Ajustar el padding */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.contenedor-principal header {
+  font-size: 2rem; /* Usar unidades rem para mejor adaptabilidad */
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+.contenedor-principal .formulario-externo {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contenedor-principal .formulario-externo form {
+  display: flex;
+  width: 400%; /* Mantener el ancho flexible */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.formulario-externo form .pagina {
+  width: 25%;
+}
+
+.formulario-externo form .pagina .titulo {
+  text-align: left;
+  font-size: 1.5rem; /* Unidades rem */
+  font-weight: 500;
+}
+
+.formulario-externo form .pagina .campo {
+  width: 100%; /* Ancho completo */
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+
+form .pagina .campo .etiqueta {
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+
+form .pagina .campo input, form .pagina .campo select {
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 1rem; /* Unidades rem */
+}
+
+form .pagina .campo button {
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #fd6d15; /* Naranja */
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #ffffff; /* Blanco */
+  cursor: pointer;
+  font-size: 1rem; /* Unidades rem */
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+form .pagina .campo button:hover {
+  background: #000000; /* Negro */
+}
+
+form .pagina .botones button {
+  margin-top: -20px !important;
+}
+
+form .pagina .botones button.anterior {
+  margin-right: 3px;
+  font-size: 0.875rem; /* Unidades rem */
+}
+
+form .pagina .botones button.siguiente {
+  margin-left: 3px;
+}
+
+.contenedor-principal .barra-progreso {
+  display: flex;
+  justify-content: space-between; /* Ajustar el espaciado entre los pasos */
+  margin: 40px 0;
+  user-select: none;
+}
+
+.contenedor-principal .barra-progreso .paso {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.contenedor-principal .barra-progreso .paso p {
+  font-weight: 500;
+  font-size: 1rem; /* Unidades rem */
+  color: #000000; /* Negro */
+  margin-bottom: 8px;
+}
+
+.barra-progreso .paso .circulo {
+  height: 29px;
+  width: 29px;
+  border: 2px solid #fff; /* Negro */
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 0.875rem; /* Unidades rem */
+  line-height: 25px;
+}
+
+.barra-progreso .paso .circulo.activo {
+  border-color: #fd6d15; /* Naranja */
+  background: #fd6d15; /* Naranja */
+}
+
+.barra-progreso .paso .circulo span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.barra-progreso .paso .circulo.activo span {
+  display: none;
+}
+
+.barra-progreso .paso .circulo:before,
+.barra-progreso .paso .circulo:after {
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+
+.barra-progreso .paso .circulo.activo:after {
+  background: #fd6d15; /* Naranja */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animar 0.3s linear forwards;
+}
+
+@keyframes animar {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.barra-progreso .paso:last-child .circulo:before,
+.barra-progreso .paso:last-child .circulo:after {
+  display: none;
+}
+
+.barra-progreso .paso p.activo {
+  color: #fd6d15; /* Naranja */
+  transition: 0.2s linear;
+}
+
+.barra-progreso .paso .verificacion {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.barra-progreso .paso .verificacion.activo {
+  display: block;
+  color: #ffffff; /* Blanco */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    padding: 30px 15px; /* Ajustar el padding para pantallas más pequeñas */
+  }
+
+  .contenedor-principal header {
+    font-size: 2rem; /* Ajustar el tamaño de la fuente */
+  }
+
+  .formulario-externo form .pagina .titulo {
+    font-size: 1.25rem; /* Ajustar el tamaño de la fuente */
+  }
+
+  form .pagina .campo input,
+  form .pagina .campo select,
+  form .pagina .campo button {
+    font-size: 0.875rem; /* Ajustar el tamaño de la fuente */
+  }
+}
+

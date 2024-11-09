@@ -1,0 +1,367 @@
+/* Centrar el div padre .panel-servicios */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.panel-servicios {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas en pantallas pequeñas */
+    gap: 10px; /* Reducimos el espacio entre los contenedores */
+    margin: 20px auto; /* Auto para centrar horizontalmente */
+    padding: 30px;
+    align-items: center;
+    justify-content: space-evenly; /* Cambiado a 'center' para centrar horizontalmente */
+    background-color: transparent;
+    border-radius: 12px;
+    max-width: 1400px; /* Limitar el ancho máximo para que no ocupe toda la pantalla */
+}
+
+/* Estilo de las tarjetas */
+.servicio {
+    background-color: #FF6F00;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.servicio:hover {
+    transform: translateY(-25px); /* Desplaza el elemento hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Añade una sombra para efecto de elevación */
+    filter: brightness(110%); /* Aumenta ligeramente la luminosidad */
+    transition: all 0.3s ease; /* Suaviza la transición de todos los efectos aplicados */
+}
+
+.servicio img {
+    width: 180px;
+    height: 180px;
+}
+
+.servicio strong {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Estilo del enlace */
+a {
+    text-decoration: none;
+    color: white; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a:hover {
+    text-decoration: none; /* Quita el subrayado al pasar el mouse */
+}
+
+/* Media Query para pantallas de tabletas (768px y menores) */
+@media (max-width: 768px) {
+    .panel-servicios {
+        justify-content: center; /* Centra los elementos en pantallas más pequeñas */
+    }
+
+    .servicio {
+        width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra tanto la imagen como el texto */
+    }
+
+    .servicio img {
+        width: 150px; /* Ajusta el tamaño de la imagen */
+        height: 150px;
+        margin-bottom: 15px; /* Margen inferior para separar la imagen del texto */
+    }
+
+    .servicio strong {
+        font-size: 18px; /* Ajusta el tamaño del texto */
+    }
+}
+
+/* Media Query para pantallas móviles (576px y menores) */
+@media (max-width: 576px) {
+    .servicio {
+        padding: 20px; /* Reducimos el padding en pantallas más pequeñas */
+        width: 100%; /* Cada tarjeta toma el ancho completo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px; /* Añadimos un margen inferior para separar la imagen del texto */
+    }
+
+    .servicio strong {
+        font-size: 16px; /* Disminuimos el tamaño de la fuente en móviles */
+    }
+}
+
+/* Estilo de la sección de autenticación */
+.auth_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas pequeñas */
+    min-height: calc(90vh); /* Altura mínima ajustada a diferentes dispositivos */
+    background-color: #000;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+/* Imagen del lado */
+.login_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_img img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 3px 5px #2f2f2f40;
+    border-radius: 8px;
+}
+
+.tab_container {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+/* Contenedor del formulario */
+.tab_content {
+    flex: 1; /* Para que el formulario también ocupe espacio proporcionalmente */
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    background-color: #0f0f0f;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px 30px; /* Ajustar margen para pantallas pequeñas */
+}
+
+.tab_content.active {
+    display: block;
+}
+
+/* Estilos del formulario */
+.auth_box h2 {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.auth_box h2 span {
+    color: #fd6d15;
+}
+
+.auth_box p {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.input_group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input_group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.input_group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón del formulario */
+.auth_button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fd6d15;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.auth_button:hover {
+    background-color: #ffffffc6;
+    color: #000;
+}
+
+.auth_button2 {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fd6d15;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.auth_button2:hover {
+    background-color: #000000b1;
+    color: #fff;
+}
+
+/* Estilo de recordar */
+.remember_input {
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: start;
+    align-items: center;
+}
+
+.remember_input input[type="checkbox"] {
+    accent-color: #fd6d15;
+    border: 2px solid #000;
+    margin-right: 10px;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .auth_container {
+        flex-direction: column; /* Coloca la imagen y el formulario en vertical en pantallas pequeñas */
+        padding: 10px;
+        margin: 0;
+    }
+
+    .login_img {
+        margin-right: 0; /* Elimina el margen lateral cuando la imagen está debajo del formulario */
+        margin-bottom: 20px; /* Añadir margen inferior para separar la imagen del formulario */
+    }
+
+    .tab_content {
+        margin: 10px 0;
+    }
+
+    .auth_box h2 {
+        font-size: 20px; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+
+    .input_group input {
+        font-size: 14px; /* Ajustar el tamaño del input */
+    }
+
+    .auth_button {
+        font-size: 14px; /* Ajustar el tamaño del botón */
+    }
+}
+@media (max-width: 480px) {
+    .login_img{
+        display: none;
+    }
+}
+
+/* Estilo de las tab. */
+.container{
+    display: flex;
+}
+.imagen-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+}
+.imagen-container img{
+    width: 80%;
+}
+.contenido_padre {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    background: #fefefe13;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .contenido_padre .hora {
+    cursor: pointer;
+    padding: 20px;
+    background: #fefefea6;
+    color: black;
+    backdrop-filter: blur(10px);
+    border: solid 1px;
+    background-color: #fff;
+    border: none;
+  }
+
+.tab {
+    display: none; /* Oculta todas las pestañas por defecto */
+}
+
+.active-tab {
+    display: block; /* Solo muestra la pestaña activa */
+}
+
+  /* Estilos para la lista de pestañas */
+  .tabs-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* Envuelve las pestañas si no caben en una sola fila */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    padding: 0; /* Elimina el padding predeterminado */
+  }
+  .tabs-list button {
+    margin-bottom: 15px; /* Espaciado entre las pestañas */
+    cursor: pointer;
+    padding: 10px;
+    background: #fefefea6;
+    color: black;
+    backdrop-filter: blur(10px);
+    border: solid 1px;
+    border-radius: 5px;
+  }
+  /* Pestaña activa */
+  .tabs-list button.active {
+    background-color: orangered;
+  }

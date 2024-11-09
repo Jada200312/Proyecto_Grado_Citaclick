@@ -1,0 +1,108 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.contenedor-principal {
+    display: flex;
+    border-radius: 10px;
+    margin: 20px;
+    gap: 20px; /* Añadimos un espacio entre los elementos */
+}
+
+.contenedor-imagen img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.contenedor-formulario {
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1; /* El formulario toma el resto del espacio disponible */
+}
+
+.contenedor-formulario label {
+    margin-bottom: 5px;
+}
+
+.contenedor-formulario input[type="text"], 
+.contenedor-formulario input[type="number"], 
+.contenedor-formulario select, 
+.contenedor-formulario input[type="file"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color:#333;
+}
+
+.contenedor-formulario button {
+    padding: 10px;
+    width: 100%; /* Mantenemos el botón del mismo ancho que los inputs */
+    background-color: #fd6d15;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contenedor-formulario button:hover {
+    background-color: #ff7f30;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas tabletas (768px y menores) */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column; /* Colocamos la imagen y el formulario en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .contenedor-imagen img {
+        width: 100%; /* La imagen ocupará el 100% del ancho disponible */
+        max-width: 500px; /* Limite para que la imagen no sea demasiado grande */
+    }
+
+    .contenedor-formulario {
+        padding: 15px; /* Reducimos el padding en pantallas más pequeñas */
+    }
+}
+
+/* Pantallas móviles (576px y menores) */
+@media (max-width: 576px) {
+    .contenedor-principal {
+        margin: 10px; /* Reducimos los márgenes en móviles */
+    }
+
+    .contenedor-imagen img {
+        width: 100%; /* La imagen ocupa el 100% del ancho de la pantalla */
+        max-width: none; /* Eliminamos el límite del ancho máximo */
+    }
+
+    .contenedor-formulario {
+        padding: 10px; /* Reducimos aún más el padding */
+    }
+
+    .contenedor-formulario button {
+        font-size: 14px; /* Mantenemos el tamaño de la fuente */
+        padding: 10px; /* Aseguramos que el botón tenga el mismo padding que los inputs */
+        width: 100%; /* El botón mantiene el mismo ancho que los inputs */
+    }
+}

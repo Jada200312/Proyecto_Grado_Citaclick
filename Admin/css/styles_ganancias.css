@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.haircut_section {
+    padding: 20px;
+    background-color: #000;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los filtros se ajusten en pantallas más pequeñas */
+    padding: 15px;
+}
+
+.filters img {
+    width: 80px;
+    height: auto;
+    padding: 2px 5px;
+}
+
+.filter_button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    border-color: #fff;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    font-size: 20px;
+}
+
+.filter_button.active,
+.filter_button:hover {
+    background-color: #fd6d15;
+    color: #fff;
+    border-color: #fd6d15;
+}
+
+.haircut_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.haircut_card {
+    width: 22%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.haircut_card img {
+    width: 100%;
+    height: 320px;
+}
+
+.haircut_info {
+    padding: 15px;
+    text-align: center;
+}
+
+.haircut_card:hover {
+    transform: translateY(-5px);
+}
+
+.haircut_info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.haircut_info p {
+    font-size: 16px;
+    color: #000;
+}
+
+/* Contenedor de imagen */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 1px solid #ccc;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas tabletas (768px y menores) */
+@media (max-width: 768px) {
+    .haircut_card {
+        width: 45%; /* Hacemos que las tarjetas ocupen casi la mitad de la pantalla en tabletas */
+    }
+
+    .filter_button {
+        font-size: 18px;
+        padding: 8px 16px; /* Reducimos el padding para hacer los botones más compactos */
+    }
+
+    .haircut_info h3 {
+        font-size: 16px;
+    }
+
+    .haircut_info p {
+        font-size: 14px;
+    }
+}
+
+/* Pantallas móviles (576px y menores) */
+@media (max-width: 576px) {
+    .haircut_card {
+        width: 100%; /* Las tarjetas ocupan el 100% del ancho de la pantalla */
+    }
+
+    .filter_button {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        padding: 6px 10px; /* Hacemos los botones más pequeños */
+        margin: 5px 3px; /* Reducimos los márgenes */
+        width: auto; /* Aseguramos que los botones no ocupen todo el ancho */
+    }
+
+    .filters {
+        flex-direction: column; /* Los filtros se apilan en una columna en pantallas móviles */
+    }
+
+    .haircut_card img {
+        height: 240px; /* Ajustamos la altura de las imágenes para pantallas pequeñas */
+    }
+
+    .haircut_info h3 {
+        font-size: 14px;
+    }
+
+    .haircut_info p {
+        font-size: 12px;
+    }
+}
