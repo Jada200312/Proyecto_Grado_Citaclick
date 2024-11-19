@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro - CITA CLICK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar_container">
+            <div class="navbar_icon">
+                <img src="./recursos/img/home.png" alt="icon">
+                <h1>CITA <span>CLICK</span></h1>
+            </div>
+            <nav class="navbar_menu">
+                <a href="index.php" class="navbar_link">Inicio</a>
+                <a href="access.html" class="navbar_link active">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="auth_container">
+    
+            <div id="login" class="tab_content active">
+
+                <div class="auth_box">
+                    <h2>Cita<span>Click</span></h2>
+                    <div class="tab_container">    
+                        <p>Bienvenido a tu sitio</p>
+                        <button class="tab_button" onclick="openTab(event, 'register')">Registrarse</button>
+                    </div>
+                    <form action="back/validar_sesion.php" method="post">
+                        <div class="input_group">
+                            <label for="login_username">Usuario</label>
+                            <input type="text" id="login_username" name="username" required>
+                        </div>
+                        <div class="input_group">
+                            <label for="login_password">Contraseña</label>
+                            <input type="password" id="login_password" name="password" required>
+                        </div>
+                        <label class="remember_input">
+                            Olvidé mi contraseña
+                        </label>
+                        <button type="submit" class="auth_button">Ingresar</button>
+                        <button type="submit" class="auth_button">Ingresar como Usuario</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="register" class="tab_content">
+
+                <div class="auth_box">
+                    <h2>Cita<span>Click</span></h2>
+                    <div class="tab_container">
+                        <p>Complete los siguientes campos</p>
+                        <button class="tab_button" onclick="openTab(event, 'login')">Iniciar Sesión</button>
+                    </div>
+                    <form action="back/registrar_usuario.php" method="post">
+                        <div class="input_group">
+                            <label for="register_name">Nombres</label>
+                            <input type="text" id="register_name" name="nombres" required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_lastname">Nombre de usuario</label>
+                            <input type="text"  required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_username">Dirección</label>
+                            <input type="text"  required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_cel">Celular</label>
+                            <input type="number" id="register_cel" name="celular" required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_email">Ciudad</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_password">Contraseña</label>
+                            <input type="password" id="register_password" name="contrasena_registro" required>
+                        </div>
+                        <div class="input_group">
+                            <label for="register_password">Foto de la peluqueria</label>
+                            <input type="file" required>
+                        </div>
+                        <button type="submit" class="auth_button">Siguiente</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="login_img">
+                <img src="./recursos/img/logocco.png" alt="logo">
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+        <div class="footer_social">
+                <h4>SOCIAL</h4>
+                <ul>
+                    <div class="social">
+                    <img src="./recursos/img/2.png" alt="">
+                    <li><a href=""><span>Facebook</span></a></li>
+                    </div>
+                    <div class="social">
+                    <img src="./recursos/img/3.png" alt="">
+                    <li><a href=""><span>Instagram</span></a></li>
+                    </div>
+                    <div class="social">
+                    <img src="./recursos/img/1.png" alt="">
+                    <li><a href=""><span>X</span></a></li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="footer_us">
+                <h4>Cita<span>Click</span></h4>
+                <p>Es el puente entre la inspiración y la acción</p>
+            </div>
+            <div class="footer_logo">
+                <img src="./recursos/img/logocc.png" alt="Logo">
+            </div>
+            <div class="footer_copy">
+                <p>&copy; Copyright CITA CLICK 2024  |  
+                    <a href="">Terms of Use</a> | 
+                    <a href="">Privacy</a> 
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function openTab(evt, tabName) {
+           var i, tab_content, tab_button;
+        
+           // Ocultar todas las pestañas y eliminar la clase active
+           tab_content = document.getElementsByClassName("tab_content");
+           for (i = 0; i < tab_content.length; i++) {
+               tab_content[i].style.display = "none";
+               tab_content[i].classList.remove("active");
+           }
+        
+           // Quitar la clase active de todos los botones de pestaña
+          tab_button = document.getElementsByClassName("tab_button");
+           for (i = 0; i < tab_button.length; i++) {
+              tab_button[i].classList.remove("active");
+           }
+        
+           // Mostrar la pestaña seleccionada y añadir la clase active al botón correspondiente
+           document.getElementById(tabName).style.display = "block";
+           document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        </script>       
+</body>
+</html>
